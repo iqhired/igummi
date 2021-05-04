@@ -1,0 +1,6 @@
+<wpml-config>
+	<admin-texts>
+		<key name="woocommerce_gallery_images_options">
+			<key name="enable" />
+	</admin-texts>
+</wpml-config>

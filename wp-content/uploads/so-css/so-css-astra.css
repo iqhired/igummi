@@ -1,0 +1,169 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab);
+
+.ast-separate-container .ast-woocommerce-container {
+  border-left: 1px solid #e0e0e0;
+}
+
+.site-primary-header-wrap {
+  background-color: #193c9c;
+}
+
+.berocket_single_filter_widget {
+  /* 	  : 2em; */
+  margin: 0em 2em 2em 2em;
+}
+
+.alter-icon-login,
+.alter-icon-pwd {
+  margin-left: 5px !important;
+}
+
+.widget {
+  margin: 0 0 0 0;
+}
+
+.ast-separate-container.ast-two-container #secondary .widget {
+  background-color: #fff;
+  padding: 0em 2em;
+  margin-bottom: 2em;
+}
+
+.widget_product_search {
+  margin-bottom: 2em;
+}
+
+.astra-shop-thumbnail-wrap {
+  /* position: relative; */
+  width: 100%;
+  height: 215px;
+}
+
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+  padding-bottom: 1.2em;
+  background-color: #f9f9f9;
+}
+
+.astra-shop-summary-wrap {
+  padding: 35px 15px !important;
+  background-color: #d9d9d9;
+}
+
+#wooswipe .thumbnails {
+  list-style: none;
+  max-height: 100%;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.ast-container {
+  /* background-color: #ffffff;
+ 		padding: 4em 0 2.5em; */
+}
+
+#primary {
+  padding: 6em 2em 0em 2em !important;
+}
+
+#secondary {
+  padding: 4em 2em 0em 2em !important;
+}
+
+.woocommerce ul.products li.product strong {
+  display: inline-flex;
+}
+
+.woocommerce ul.products.columns-2 li.product {
+  border-width: 1px;
+  border-style: solid;
+  background-color: #ffffff;
+}
+
+.woocommerce a.button {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#pg-w603fb19aabcbc-0.panel-grid.panel-no-style {
+  align-items: baseline !important;
+}
+
+.woocommerce div.product div.images .flex-control-thumbs {
+  display: block;
+}
+
+.panel-row-style {
+  align-items: baseline !important;
+}
+
+div[id^="pg-w603"][id$="-0.panel-grid.panel-no-style"] {
+  align-items: baseline !important;
+}
+
+.woocommerce div.product div.images.woocommerce-product-gallery .flex-viewport {
+  height: auto !important;
+}
+
+.woocommerce div.product .product_title {
+  /*text-transform: uppercase;*/
+  font-weight: 600;
+}
+
+.woocommerce div.product p {
+  /*font-size: 1.4em;*/
+  font-family: 'Roboto';
+}
+
+.woocommerce-gallery-images-main-carousel-fullscreen {
+  display: none !important;
+}
+
+.woocommerce-gallery-images-main-carousel-cell {
+  text-align: center !important;
+  background-color: #ccc;
+  min-height: inherit;
+  /*	height:inherit;
+	/*box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
+}
+
+.flickity-button {
+  position: absolute;
+  background: hsl(0deg 0% 100% / 0%);
+  border: none;
+  color: #333;
+}
+
+.woof_childs_list {
+  color: #3d3d3d;
+  font-family: 'Verdana', sans-serif;
+  text-transform: capitalize;
+  font-size: 0.8em;
+}
+
+.icheckbox_flat-blue {
+  border: 1px solid black;
+}
+
+.icheckbox_flat-blue .woof_checkbox_label {
+  font-size: large;
+}
+
+.woof_list {
+  font-weight: normal;
+  font-family: 'Roboto Slab';
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.secondary .widget-title {
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+
+
+#secondary.widget-area.secondary {
+  background-color: #ffffff;
+}
