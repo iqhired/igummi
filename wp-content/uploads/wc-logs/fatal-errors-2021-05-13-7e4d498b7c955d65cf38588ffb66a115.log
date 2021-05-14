@@ -1,0 +1,94 @@
+2021-05-13T07:06:29+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-includes\wp-db.php on line 2056
+
+2021-05-13T07:06:51+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-includes\post-formats.php on line 235
+
+2021-05-13T07:07:45+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-includes\option.php on line 140
+
+2021-05-13T07:08:18+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\packages\action-scheduler\classes\abstracts\ActionScheduler.php on line 121
+
+2021-05-13T07:08:18+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\packages\action-scheduler\classes\abstracts\ActionScheduler.php on line 121
+
+2021-05-13T07:08:18+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\packages\action-scheduler\classes\abstracts\ActionScheduler.php on line 121
+
+2021-05-13T07:08:18+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\packages\action-scheduler\classes\ActionScheduler_FatalErrorMonitor.php on line 6
+
+2021-05-13T07:08:18+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\packages\action-scheduler\classes\abstracts\ActionScheduler.php on line 121
+
+2021-05-13T07:08:18+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\packages\action-scheduler\classes\abstracts\ActionScheduler.php on line 121
+
+2021-05-13T07:08:18+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\alter\includes\alter-import-export.class.php on line 84
+
+2021-05-13T07:08:20+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-admin\includes\class-wp-list-table.php on line 16
+
+2021-05-13T07:08:20+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-admin\includes\class-wp-list-table.php on line 16
+
+2021-05-13T07:08:20+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce-gallery-images\admin\options-init.php on line 9
+
+2021-05-13T07:08:20+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce-gallery-images\admin\class-woocommerce-gallery-images-admin.php on line 88
+
+2021-05-13T07:08:20+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-admin\includes\class-wp-list-table.php on line 16
+
+2021-05-13T07:08:21+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\welaunch-framework\welaunch-core\inc\classes\class-welaunch-api.php on line 15
+
+2021-05-13T07:08:21+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\welaunch-framework\welaunch-core\inc\classes\class-welaunch-api.php on line 15
+
+2021-05-13T12:08:21+00:00 CRITICAL syntax error, unexpected '$obj_pdf' (T_VARIABLE) in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 404
+
+2021-05-13T12:09:30+00:00 CRITICAL syntax error, unexpected '$obj_pdf' (T_VARIABLE) in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 402
+
+2021-05-13T12:10:22+00:00 CRITICAL syntax error, unexpected '$obj_pdf' (T_VARIABLE) in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 402
+
+2021-05-13T12:12:23+00:00 CRITICAL syntax error, unexpected '$obj_pdf' (T_VARIABLE) in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 402
+
+2021-05-13T12:12:39+00:00 CRITICAL syntax error, unexpected '$obj_pdf' (T_VARIABLE) in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 402
+
+2021-05-13T12:12:52+00:00 CRITICAL syntax error, unexpected '$obj_pdf' (T_VARIABLE) in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 402
+
+2021-05-13T12:12:53+00:00 CRITICAL syntax error, unexpected '$obj_pdf' (T_VARIABLE) in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 402
+
+2021-05-13T14:55:15+00:00 CRITICAL syntax error, unexpected '<' in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 384
+
+2021-05-13T14:55:44+00:00 CRITICAL syntax error, unexpected '}', expecting end of file in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 431
+
+2021-05-13T14:56:33+00:00 CRITICAL Uncaught Error: Call to undefined function fetch_data() in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php:408
+Stack trace:
+#0 C:\xampp\htdocs\igummi\wp-includes\class-wp-hook.php(292): wpse_110037_new_posts('auto-draft', 'new', Object(WP_Post))
+#1 C:\xampp\htdocs\igummi\wp-includes\class-wp-hook.php(316): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\igummi\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\igummi\wp-includes\post.php(5014): do_action('transition_post...', 'auto-draft', 'new', Object(WP_Post))
+#4 C:\xampp\htdocs\igummi\wp-includes\post.php(4284): wp_transition_post_status('auto-draft', 'new', Object(WP_Post))
+#5 C:\xampp\htdocs\igummi\wp-admin\includes\post.php(690): wp_insert_post(Array, false, false)
+#6 C:\xampp\htdocs\igummi\wp-admin\post-new.php(66): get_default_post_to_edit('product', true)
+#7 {main}
+  thrown in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 408
+
+2021-05-13T15:18:13+00:00 CRITICAL Uncaught Error: Call to a member function get_attributes() on bool in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php:357
+Stack trace:
+#0 C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php(401): fetch_data()
+#1 C:\xampp\htdocs\igummi\wp-includes\class-wp-hook.php(292): wpse_110037_new_posts('publish', 'draft', Object(WP_Post))
+#2 C:\xampp\htdocs\igummi\wp-includes\class-wp-hook.php(316): WP_Hook->apply_filters(NULL, Array)
+#3 C:\xampp\htdocs\igummi\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\igummi\wp-includes\post.php(5014): do_action('transition_post...', 'publish', 'draft', Object(WP_Post))
+#5 C:\xampp\htdocs\igummi\wp-includes\post.php(4284): wp_transition_post_status('publish', 'draft', Object(WP_Post))
+#6 C:\xampp\htdocs\igummi\wp-includes\post.php(4486): wp_insert_post(Array, false, true)
+#7 C:\xampp\htdocs\igummi\wp-admin\includes\post.php(419): wp_update_post(Array)
+#8 C:\xampp\htdocs\igummi\wp-admin\post.php(227): edit_post()
+#9 {main}
+  thrown in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 357
+
+2021-05-13T15:25:42+00:00 CRITICAL Uncaught Error: Call to a member function get_attributes() on bool in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php:357
+Stack trace:
+#0 C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php(410): fetch_data()
+#1 C:\xampp\htdocs\igummi\wp-includes\class-wp-hook.php(292): wpse_110037_new_posts('publish', 'draft', Object(WP_Post))
+#2 C:\xampp\htdocs\igummi\wp-includes\class-wp-hook.php(316): WP_Hook->apply_filters(NULL, Array)
+#3 C:\xampp\htdocs\igummi\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\igummi\wp-includes\post.php(5014): do_action('transition_post...', 'publish', 'draft', Object(WP_Post))
+#5 C:\xampp\htdocs\igummi\wp-includes\post.php(4284): wp_transition_post_status('publish', 'draft', Object(WP_Post))
+#6 C:\xampp\htdocs\igummi\wp-includes\post.php(4486): wp_insert_post(Array, false, true)
+#7 C:\xampp\htdocs\igummi\wp-admin\includes\post.php(419): wp_update_post(Array)
+#8 C:\xampp\htdocs\igummi\wp-admin\post.php(227): edit_post()
+#9 {main}
+  thrown in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 357
+
+2021-05-13T15:31:19+00:00 CRITICAL Object of class WC_Product_Attribute could not be converted to string in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 367
+

@@ -1,0 +1,30 @@
+2021-05-11T09:53:32+00:00 CRITICAL Uncaught Error: Call to a member function has_weight() on bool in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\includes\wc-template-functions.php:3384
+Stack trace:
+#0 C:\xampp\htdocs\igummi\wp-includes\class-wp-hook.php(292): wc_display_product_attributes(false)
+#1 C:\xampp\htdocs\igummi\wp-includes\class-wp-hook.php(316): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\igummi\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\igummi\wp-content\plugins\siteorigin-premium\addons\plugin\woocommerce-templates\templates\content-single-product\wc-output-additional-information.php(17): do_action('woocommerce_pro...', false)
+#4 C:\xampp\htdocs\igummi\wp-content\plugins\siteorigin-panels\inc\renderer.php(558): SiteOrigin_Premium_WooCommerce_Output_Additional_Information->widget(Array, Array)
+#5 C:\xampp\htdocs\igummi\wp-content\plugins\siteorigin-panels\inc\renderer.php(870): SiteOrigin_Panels_Renderer->the_widget(Array, Array, 0, 1, 1, false, true, 'w609a3af52c31b', '')
+#6 C:\xam in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 3384
+
+2021-05-11T09:54:36+00:00 CRITICAL Uncaught Error: Call to a member function get_attributes() on bool in C:\xampp\htdocs\igummi\wp-content\plugins\astra-addon\addons\advanced-hooks\classes\class-astra-ext-advanced-hooks-markup.php:241
+Stack trace:
+#0 C:\xampp\htdocs\igummi\wp-includes\class-wp-hook.php(292): Astra_Ext_Advanced_Hooks_Markup->advanced_hook_content_markup('<div class="fie...')
+#1 C:\xampp\htdocs\igummi\wp-includes\plugin.php(212): WP_Hook->apply_filters('<div class="fie...', Array)
+#2 C:\xampp\htdocs\igummi\wp-includes\post-template.php(253): apply_filters('the_content', '<div class="fie...')
+#3 C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\templates\single-product\tabs\description.php(30): the_content()
+#4 C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1761): wc_get_template('single-product/...')
+#6 C:\xampp\htdocs\igummi\wp-content\plugins\siteorigin-prem in C:\xampp\htdocs\igummi\wp-content\plugins\astra-addon\addons\advanced-hooks\classes\class-astra-ext-advanced-hooks-markup.php on line 241
+
+2021-05-11T09:57:09+00:00 CRITICAL Uncaught Error: Call to a member function get_title() on bool in C:\xampp\htdocs\igummi\wp-content\plugins\astra-addon\addons\advanced-hooks\classes\class-astra-ext-advanced-hooks-markup.php:241
+Stack trace:
+#0 C:\xampp\htdocs\igummi\wp-includes\class-wp-hook.php(292): Astra_Ext_Advanced_Hooks_Markup->advanced_hook_content_markup('<div class="fie...')
+#1 C:\xampp\htdocs\igummi\wp-includes\plugin.php(212): WP_Hook->apply_filters('<div class="fie...', Array)
+#2 C:\xampp\htdocs\igummi\wp-includes\post-template.php(253): apply_filters('the_content', '<div class="fie...')
+#3 C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\templates\single-product\tabs\description.php(30): the_content()
+#4 C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1761): wc_get_template('single-product/...')
+#6 C:\xampp\htdocs\igummi\wp-content\plugins\siteorigin-premium\a in C:\xampp\htdocs\igummi\wp-content\plugins\astra-addon\addons\advanced-hooks\classes\class-astra-ext-advanced-hooks-markup.php on line 241
+

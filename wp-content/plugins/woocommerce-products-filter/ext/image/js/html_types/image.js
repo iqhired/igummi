@@ -5,7 +5,7 @@ function woof_init_image() {
         var image = jQuery(this).data('image');
         var styles = jQuery(this).data('styles');
         if (image.length > 0) {
-            styles += '; background-image: url(' + image + ');';
+            styles += '; background-image: url(' + image + '); ';
         } else {
             styles += '; background-color: #ffffff;';
         }
@@ -20,6 +20,16 @@ function woof_init_image() {
 
     function woof_image_do_check() {
         var is_checked = false;
+        var radio=false;
+        if(jQuery(this).parents(".woof_list_image").data("type")=="radio"){
+            radio=true;
+        }
+        if(radio){
+            var elements=jQuery(this).parents(".woof_list_image").find(".woof_image_term");
+            jQuery(elements).removeClass('checked');
+            jQuery(elements).children().prop("checked", false);
+        }
+           
         if (jQuery(this).hasClass('checked')) {
             jQuery(this).removeClass('checked');
             jQuery(this).children().prop("checked", false);
@@ -29,7 +39,7 @@ function woof_init_image() {
             is_checked = true;
         }
 
-        woof_image_process_data(this, is_checked);
+        woof_image_process_data(this, is_checked,radio);
     }
 
     function woof_image_do_down() {
@@ -41,39 +51,49 @@ function woof_init_image() {
     }
 }
 
-function woof_image_process_data(_this, is_checked) {
+function woof_image_process_data(_this, is_checked,radio) {
     var tax = jQuery(_this).find('input[type=checkbox]').data('tax');
     var name = jQuery(_this).find('input[type=checkbox]').attr('name');
     var term_id = jQuery(_this).find('input[type=checkbox]').data('term-id');
-    woof_image_direct_search(term_id, name, tax, is_checked);
+    woof_image_direct_search(term_id, name, tax, is_checked,radio);
 }
 
-function woof_image_direct_search(term_id, name, tax, is_checked) {
+function woof_image_direct_search(term_id, name, tax, is_checked,radio) {
 
     var values = '';
     var checked = true;
     if (is_checked) {
-        if (tax in woof_current_values) {
-            woof_current_values[tax] = woof_current_values[tax] + ',' + name;
-        } else {
+        if(!radio){
+            if (tax in woof_current_values) {
+                woof_current_values[tax] = woof_current_values[tax] + ',' + name;
+            } else {
+                woof_current_values[tax] = name;
+            }            
+        }else{
             woof_current_values[tax] = name;
         }
+
         checked = true;
     } else {
-        values = woof_current_values[tax];
-        values = values.split(',');
-        var tmp = [];
-        jQuery.each(values, function (index, value) {
-            if (value != name) {
-                tmp.push(value);
-            }
-        });
-        values = tmp;
-        if (values.length) {
-            woof_current_values[tax] = values.join(',');
-        } else {
+        if(!radio){
+            values = woof_current_values[tax];
+            values = values.split(',');
+            var tmp = [];
+            jQuery.each(values, function (index, value) {
+                if (value != name) {
+                    tmp.push(value);
+                }
+            });
+            values = tmp;
+            if (values.length) {
+                woof_current_values[tax] = values.join(',');
+            } else {
+                delete woof_current_values[tax];
+            }            
+        }else{
             delete woof_current_values[tax];
         }
+        
         checked = false;
     }
     jQuery('.woof_image_term_' + term_id).attr('checked', checked);

@@ -32,33 +32,10 @@
             <div class="woof-notice"><?php _e("Your settings have been saved.", 'woocommerce-products-filter') ?></div>
         <?php endif; ?>
 
-        <div style="display: flex; justify-content: space-between;">
 
-            <div>
-                <h3 style="color: red; margin-bottom: 1px;"><?php printf(__('WOOF - WooCommerce Products Filter v.%s', 'woocommerce-products-filter'), WOOF_VERSION) ?></h3>
-                <i><?php printf(esc_html__('Actualized for WooCommerce v.%s.x', 'woocommerce-products-filter'), WOOCOMMERCE_VERSION) ?></i><br />
-                <br />
-            </div>
-
-            <div>
-                <?php
-                try {
-                    date_default_timezone_set('UTC');
-                } catch (Exeption $e) {
-                    //+++
-                }
-                $start = mktime(12, 35, 0, 3, 22, 2021);
-                $end = mktime(1, 0, 0, 3, 26, 2021);
-
-                if (time() > $start AND time() < $end):
-                    ?>
-                    <a href="https://codecanyon.pluginus.net/item/woof-woocommerce-products-filter/11498469" alt="40% off sale" target="_blank"><img width="400" src="<?php echo WOOF_LINK ?>img/plugin_options/banners/off40sale-590x60.jpg" alt="40% off sale" /></a>
-                <?php endif; ?>
-            </div>
-
-        </div>
-
-
+        <h3 style="color: red; margin-bottom: 1px;"><?php printf(__('WOOF - WooCommerce Products Filter v.%s', 'woocommerce-products-filter'), WOOF_VERSION) ?></h3>
+        <i><?php printf(esc_html__('Actualized for WooCommerce v.%s.x', 'woocommerce-products-filter'), WOOCOMMERCE_VERSION) ?></i><br />
+        <br />
 
         <input type="hidden" name="woof_settings" value="" />
         <input type="hidden" name="woof_settings[items_order]" value="<?php echo(isset($woof_settings['items_order']) ? $woof_settings['items_order'] : '') ?>" />
@@ -850,7 +827,7 @@
                                         <span><?php _e("Options", 'woocommerce-products-filter') ?></span>
                                     </a>
                                 </li>
-                                <?php do_action('woof_print_applications_tabs_anvanced'); ?>
+								<?php do_action('woof_print_applications_tabs_anvanced'); ?>
                             </ul>
                         </nav>
 
@@ -972,10 +949,12 @@
                                         <div class="woof-control">
 
                                             <?php
-                                            $woof_settings['swoof_search_slug'] = '';
+                                            if (!isset($woof_settings['swoof_search_slug'])) {
+                                                $woof_settings['swoof_search_slug'] = '';
+                                            }
                                             ?>
 
-                                            <input placeholder="swoof" readonly="" type="text" name="" value="swoof" id="swoof_search_slug" />
+                                            <input placeholder="swoof" type="text" name="woof_settings[swoof_search_slug]" value="<?php echo $woof_settings['swoof_search_slug'] ?>" id="swoof_search_slug" />
 
                                         </div>
                                         <div class="woof-description">
@@ -1049,7 +1028,9 @@
                                         <div class="woof-control">
 
                                             <?php
-                                            $woof_settings['override_no_products'] = '';
+                                            if (!isset($woof_settings['override_no_products'])) {
+                                                $woof_settings['override_no_products'] = '';
+                                            }
                                             ?>
 
                                             <textarea name="woof_settings[override_no_products]" id="override_no_products" ><?php echo $woof_settings['override_no_products'] ?></textarea>
@@ -1085,7 +1066,7 @@
                                             <div class="select-wrap">
                                                 <select name="woof_settings[storage_type]">
                                 <?php foreach ($storage_types as $key => $value) : ?>
-                                                                                                                                                                                                                                                                                                        <option value="<?php echo $key; ?>" <?php if ($woof_settings['storage_type'] == $key): ?>selected="selected"<?php endif; ?>><?php echo $value; ?></option>
+                                                                                                                                                                                                                                                                                <option value="<?php echo $key; ?>" <?php if ($woof_settings['storage_type'] == $key): ?>selected="selected"<?php endif; ?>><?php echo $value; ?></option>
                                 <?php endforeach; ?>
                                                 </select>
                                             </div>
@@ -1100,9 +1081,12 @@
                                 <div class="woof-control-section woof_premium_only">
                                     <?php
                                     $show_images_by_attr = array(
-                                        0 => __("No", 'woocommerce-products-filter')
+                                        0 => __("No", 'woocommerce-products-filter'),
+                                        1 => __("Yes", 'woocommerce-products-filter')
                                     );
-                                    $woof_settings['show_images_by_attr_show'] = 0;
+                                    if (!isset($woof_settings['show_images_by_attr_show']) OR empty($woof_settings['show_images_by_attr_show'])) {
+                                        $woof_settings['show_images_by_attr_show'] = 0;
+                                    }
                                     ?>
 
                                     <h5><?php _e("Show image of variation", 'woocommerce-products-filter') ?></h5>
@@ -1122,7 +1106,9 @@
                                             ?>
 
                                             <?php
-                                            $woof_settings['show_images_by_attr'] = array();
+                                            if (!isset($woof_settings['show_images_by_attr']) OR empty($woof_settings['show_images_by_attr'])) {
+                                                $woof_settings['show_images_by_attr'] = array();
+                                            }
                                             ?>
                                             <div class="select-wrap chosen_select" <?php echo (!$woof_settings['show_images_by_attr_show']) ? "style='display:none;'" : ""; ?> >
                                                 <select  class="chosen_select" multiple name="woof_settings[show_images_by_attr][]">
@@ -1153,11 +1139,14 @@
                                             <?php
                                             $hide_terms_count_txt = array(
                                                 0 => __("No", 'woocommerce-products-filter'),
+                                                1 => __("Yes", 'woocommerce-products-filter')
                                             );
                                             ?>
 
                                             <?php
-                                            $woof_settings['hide_terms_count_txt'] = 0;
+                                            if (!isset($woof_settings['hide_terms_count_txt']) OR empty($woof_settings['hide_terms_count_txt'])) {
+                                                $woof_settings['hide_terms_count_txt'] = 0;
+                                            }
                                             ?>
 
                                             <select name="woof_settings[hide_terms_count_txt]">
@@ -1577,8 +1566,8 @@
                                 </div><!--/ .woof-control-section-->
 
                             </section>
-
-                            <?php do_action('woof_print_applications_tabs_content_advanced'); ?>
+							
+							<?php do_action('woof_print_applications_tabs_content_advanced');?>
 
                         </div>
 
@@ -1975,7 +1964,6 @@
                                             <a class="button" href="https://products-filter.com/video-tutorials/" target="_blank"><?php _e("Video tutorials", 'woocommerce-products-filter') ?></a>
                                             <a class="button" href="https://pluginus.net/support/" target="_blank"><?php _e("Support", 'woocommerce-products-filter') ?></a>
                                             <a class="button" href="https://products-filter.com/translations/" target="_blank"><?php _e("Translations", 'woocommerce-products-filter') ?></a>
-
                                         </li>
 
                                     </ul>
@@ -2368,7 +2356,7 @@
             </div>
 
         </div>
-        <?php //  woof_option_checkbox woof_option_mselect woof_option_image woof_option_color woof_option_label woof_option_select_radio_check  ?>
+        <?php //  woof_option_checkbox woof_option_mselect woof_option_image woof_option_color woof_option_label woof_option_select_radio_check ?>
         <div class="woof_option_container woof_option_all ">
 
             <div class="woof-form-element-container">
@@ -2593,7 +2581,7 @@
                 <h3><?php _e('Drop-down OR radio', 'woocommerce-products-filter') ?></h3>
                 <strong><?php _e('Drop-down OR radio price filter ranges', 'woocommerce-products-filter') ?></strong>
                 <span><?php _e('Ranges for price filter.', 'woocommerce-products-filter') ?></span>
-                <!-- <span><?php //printf(__('Example: 0-50,51-100,101-i. Where "i" is infinity. Max price is %s.', 'woocommerce-products-filter'), WOOF_HELPER::get_max_price())                      ?></span> -->
+                <!-- <span><?php //printf(__('Example: 0-50,51-100,101-i. Where "i" is infinity. Max price is %s.', 'woocommerce-products-filter'), WOOF_HELPER::get_max_price())                ?></span> -->
                 <span><?php echo __('Example: 0-50,51-100,101-i. Where "i" is infinity.', 'woocommerce-products-filter') ?></span>
             </div>
 
@@ -2716,7 +2704,7 @@
     <hr />
 
 
-    <table style="width: 100%;">
+     <table style="width: 100%;">
         <tr>
             <td style="width: 25%;">
                 <h3 style="color: tomato"><?php _e("WOOF FULL VERSION", 'woocommerce-products-filter') ?>:</h3>
@@ -2732,7 +2720,7 @@
                 <h3><?php _e("WooCommerce Currency Swither", 'woocommerce-products-filter') ?>:</h3>
                 <a href="https://pluginus.net/affiliate/woocommerce-currency-switcher" target="_blank"><img width="250" src="<?php echo WOOF_LINK ?>img/plugin_options/banners/woocs.png" alt="<?php _e("WOOCS", 'woocommerce-products-filter'); ?>" /></a>
             </td>
-
+            
             <td style="width: 25%;">
                 <h3><?php _e("WooCommerce Products Tables", 'woocommerce-products-filter') ?>:</h3>
                 <a href="https://codecanyon.pluginus.net/item/woot-woocommerce-products-tables/27928580" target="_blank"><img width="250" src="<?php echo WOOF_LINK ?>img/plugin_options/banners/woot.png" alt="<?php _e("WOOT", 'woocommerce-products-filter'); ?>" /></a>

@@ -48,7 +48,8 @@ final class WOOF_EXT_SEL_RADIO_CHECK extends WOOF_EXT {
                 'tip' => __('How to display this filter-element on the site frontend', 'woocommerce-products-filter'),
                 'type' => 'select',
                 'options' => array(
-                    0 => __('Radio', 'woocommerce-products-filter')
+                    0 => __('Radio', 'woocommerce-products-filter'),
+                    1 => __('Checkbox', 'woocommerce-products-filter')
                 )
             ),
             'select_radio_check_height' => array(

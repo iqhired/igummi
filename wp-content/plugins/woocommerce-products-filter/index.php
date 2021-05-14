@@ -7,14 +7,14 @@
   Tested up to: WP 5.7
   Author: realmag777
   Author URI: https://pluginus.net/
-  Version: 1.2.5.3
+  Version: 2.2.5.3
   Requires PHP: 5.4
   Tags: filter,search,woocommerce,woocommerce filter,woocommerce product filter,woocommerce products filter,products filter,product filter,filter of products,filter for products,filter for woocommerce
   Text Domain: woocommerce-products-filter
   Domain Path: /languages
   Forum URI: https://pluginus.net/support/forum/woof-woocommerce-products-filter/
   WC requires at least: 3.6.0
-  WC tested up to: 5.2
+  WC tested up to: 5.1
  */
 
 //update_option('woof_settings', '');//nearly absolute reset of the plugin settings
@@ -37,7 +37,7 @@ define('WOOF_PATH', plugin_dir_path(__FILE__));
 define('WOOF_LINK', plugin_dir_url(__FILE__));
 define('WOOF_PLUGIN_NAME', plugin_basename(__FILE__));
 define('WOOF_EXT_PATH', WOOF_PATH . 'ext/');
-define('WOOF_VERSION', '1.2.5.3');
+define('WOOF_VERSION', '2.2.5.3');
 define('WOOF_MIN_WOOCOMMERCE_VERSION', '3.6');
 //classes
 include WOOF_PATH . 'classes/storage.php';
@@ -87,12 +87,12 @@ final class WOOF {
     public $storage = null;
     //public $storage_type = 'session'; //transient
     public $storage_type = 'transient'; //session
-    public $is_free_ver = true; //just for notices, do not think that this is hack for free version :)
+    public $is_free_ver = false; //just for notices, do not think that this is hack for free version :)
 
     public function __construct() {
         global $wpdb;
         self::$query_cache_table = $wpdb->prefix . self::$query_cache_table;
-        //new feature
+        //new  feature
         add_action('woocommerce_init', array($this, 'replacing_template_loop_product_thumbnail'));
         //***
         add_action('wp_ajax_woof_upload_ext', array($this, 'woof_upload_ext'));
@@ -151,11 +151,6 @@ final class WOOF {
         add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts_styles'));
         add_action('admin_enqueue_scripts', array($this, 'admin_enqueue_scripts'));
         add_action('widgets_init', array($this, 'widgets_init'));
-
-
-
-
-        //$this->rate_alert = new WOOF_RATE_ALERT($this->is_free_ver);
     }
 
     public function init() {
@@ -561,6 +556,11 @@ final class WOOF {
 
     public function get_swoof_search_slug() {
         $slug = 'swoof';
+
+        if (isset($this->settings['swoof_search_slug']) AND!empty($this->settings['swoof_search_slug'])) {
+            $slug = $this->settings['swoof_search_slug'];
+        }
+
         return $slug;
     }
 
@@ -1396,7 +1396,8 @@ final class WOOF {
                 'class' => 'chosen_select',
                 'css' => 'min-width:300px;',
                 'options' => array(
-                    0 => __('No', 'woocommerce-products-filter')
+                    0 => __('No', 'woocommerce-products-filter'),
+                    1 => __('Yes', 'woocommerce-products-filter')
                 ),
                 'desc_tip' => true
             ),
@@ -1851,6 +1852,9 @@ final class WOOF {
     }
 
     public function woocommerce_shortcode_products_query($query_args, $attr, $type = "") {
+        if (isset($_REQUEST['override_no_products']) AND $_REQUEST['override_no_products']) {
+            return $query_args;
+        }
         if ($this->is_isset_in_request_data($this->get_swoof_search_slug())) {
             $_REQUEST['woof_products_doing'] = 1;
             $query_args['tax_query'] = array_merge($query_args['tax_query'], $this->get_tax_query(''));
@@ -2447,7 +2451,6 @@ final class WOOF {
                     if (!is_array($this->settings['meta_filter'])) {
                         $this->settings['meta_filter'] = array();
                     }
-
                     foreach ($this->settings['meta_filter'] as $item) {
                         $key = $item['search_view'] . "_" . $item['meta_key'];
                         if (in_array($key, array_keys($get_array))) {
@@ -2499,7 +2502,7 @@ final class WOOF {
             <?php //if (!get_option('woof_try_ajax')):                                                                                                                                       ?>
             <div id="woof_results_by_ajax" data-count="<?php echo $products->found_posts ?>"  class="woof_results_by_ajax_shortcode" data-shortcode="<?php echo $shortcode_txt ?>">
                 <?php
-                //endif;
+                //endif; 
                 //ajax compatibility
                 $_REQUEST["woof_redraw_elements"] = array();
                 if (isset($this->settings['result_count_redraw']) AND $this->settings['result_count_redraw']) {
@@ -2522,7 +2525,7 @@ final class WOOF {
                 }
                 $_REQUEST["woof_redraw_elements"] = apply_filters('woof_redraw_elements_after_ajax', $_REQUEST["woof_redraw_elements"], $products);
                 //+++
-                ?>
+                ?>           
             <?php endif; ?>
             <?php
             if ($products->have_posts()) :
@@ -2696,13 +2699,13 @@ final class WOOF {
 //            if(isset($this->settings['result_count_redraw']) AND $this->settings['result_count_redraw'] AND $_REQUEST["woof_redraw_elements"][$this->settings['result_count_redraw']]){
 //                $additional_fields[$this->settings['result_count_redraw']] = $_REQUEST["woof_redraw_elements"][$this->settings['result_count_redraw']];
 //            }
-//            if(isset($this->settings['order_dropdown_redraw']) AND $this->settings['order_dropdown_redraw'] AND $_REQUEST["woof_redraw_elements"][$this->settings['order_dropdown_redraw']]){
+//            if(isset($this->settings['order_dropdown_redraw']) AND $this->settings['order_dropdown_redraw'] AND $_REQUEST["woof_redraw_elements"][$this->settings['order_dropdown_redraw']]){             
 //                $additional_fields[$this->settings['order_dropdown_redraw']]=$_REQUEST["woof_redraw_elements"][$this->settings['order_dropdown_redraw']];
 //            }
 //            if(isset($this->settings['per_page_redraw']) AND $this->settings['per_page_redraw'] AND $_REQUEST["woof_redraw_elements"][$this->settings['per_page_redraw']]){
 //                $additional_fields[$this->settings['per_page_redraw']]=$_REQUEST["woof_redraw_elements"][$this->settings['per_page_redraw']];
 //
-//            }
+//            }              
 
 
             if (isset($_REQUEST["woof_redraw_elements"]) AND $_REQUEST["woof_redraw_elements"]) {
@@ -2760,7 +2763,7 @@ final class WOOF {
             $taxonomies = $this->get_taxonomies();
             $allow_taxonomies = (array) (isset($this->settings['tax']) ? $this->settings['tax'] : array());
             $args['taxonomies'] = array();
-            $hide_empty = false;
+            $hide_empty = (bool) get_option('woof_hide_dynamic_empty_pos', 0);
             if (!empty($taxonomies)) {
                 foreach ($taxonomies as $tax_key => $tax) {
                     if (!in_array($tax_key, array_keys($allow_taxonomies))) {
@@ -3408,7 +3411,10 @@ final class WOOF {
 
         public function woof_overide_template($template, $template_name, $template_path) {
             if ($template_name == 'loop/no-products-found.php') {
-                
+                if (isset($this->settings['override_no_products']) AND!empty($this->settings['override_no_products'])) {
+                    $_REQUEST['override_no_products'] = 1;
+                    $template = WOOF_PATH . 'views/no-products-found.php';
+                }
             }
             return $template;
         }
@@ -3609,13 +3615,15 @@ final class WOOF {
 
         public function replacing_template_loop_product_thumbnail() {
             $show = 0;
-
+            if (isset($this->settings['show_images_by_attr_show'])) {
+                $show = $this->settings['show_images_by_attr_show'];
+            }
             if ($show) {
                 // Remove product images from the shop loop
                 remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
                 // Adding something instead
                 add_action('woocommerce_before_shop_loop_item_title', array($this, 'wc_template_loop_product_replaced_thumb'), 10);
-//flatsome theme compatibility
+//flatsome theme compatibility				
 //				remove_action('flatsome_woocommerce_shop_loop_images', 'woocommerce_template_loop_product_thumbnail', 10);
 //				add_action('flatsome_woocommerce_shop_loop_images', array($this, 'wc_template_loop_product_replaced_thumb'), 10);
             }
@@ -3789,12 +3797,11 @@ final class WOOF {
         delete_transient('woof_min_max_prices');
     }, 10, 2);
 
-
     //ask favour
     add_action('init', function() {
 
-        if (intval(get_option('woof_manage_rate_alert', 0)) === -2) {
-            return; //old rate system mark for already set review users
+        if (intval(get_option('woof_manage_rate_alert', 0)) === -2) {            
+            return;//old rate system mark for already set review users
         }
 
         $slug = 'woof';
@@ -3892,4 +3899,5 @@ final class WOOF {
             <?php
         });
     }, 1);
+
     

@@ -3,7 +3,7 @@ if (!defined('ABSPATH'))
     die('No direct access allowed');
 
 global $WOOF;
-$style="background-size: ".$image_h."px ".$image_w."px !important;";
+$style="background-size: ".$image_w."px ".$image_h."px !important;";
 $style_cont="";
 if($height!="auto"){
     $style_cont.="height:".$height.";";

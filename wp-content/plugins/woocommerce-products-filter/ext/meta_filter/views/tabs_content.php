@@ -19,10 +19,6 @@ global $WOOF;
 
                 <h4><?php _e('Meta Fields', 'woocommerce-products-filter') ?></h4>
 
-                <p style="border: dashed 1px #ddd; padding: 4px; color: red;">
-                    <?php _e('In FREE version it is possible to operate by 2 meta fields only!', 'woocommerce-products-filter') ?>
-                </p>
-
                 <table style="width: 100%;">
                     <tr>
                         <td style="width: 50%;">
@@ -58,16 +54,10 @@ global $WOOF;
                         //echo '</pre>';
 
                         if (!empty($metas)) {
-                            $counter = 0;
                             foreach ($metas as $m) {
                                 if ($m['meta_key'] == "__META_KEY__") {
                                     continue;
                                 }
-
-                                if ($counter++ >= 2) {
-                                    break;
-                                }
-
                                 woof_meta_print_li($m, $meta_types);
                             }
                         }
@@ -114,14 +104,14 @@ global $WOOF;
                                 <select name="woof_settings[meta_filter][<?php echo $m['meta_key'] ?>][search_view]" class="woof_meta_view_selector" style="width: 99%;">
                                     <?php
                                     foreach ($meta_types as $key => $type):
-                                        if (!is_array($type['hide_if'])) {
-                                            $type['hide_if'] = array($type['hide_if']);
+                                        if(!is_array($type['hide_if'])){
+                                            $type['hide_if']=array($type['hide_if']);
                                         }
-                                        if ($m['search_view'] == $key AND in_array($m['type'], $type['hide_if'])) {
+                                        if ($m['search_view'] == $key AND in_array($m['type'],$type['hide_if'] ) ) {
                                             $m['search_view'] = 'textinput';
                                         }
                                         ?> 
-                                        <option  <?php selected($m['search_view'], $key) ?> value="<?php echo $key ?>" data-show-options="<?php echo ($type['show_options']) ? 'yes' : 'no'; ?>" data-hideif="<?php echo implode(',', $type['hide_if']) ?>" <?php echo (in_array($m['type'], $type['hide_if'])) ? "style='display:none;'" : ""; ?>  >
+                                        <option  <?php selected($m['search_view'], $key) ?> value="<?php echo $key ?>" data-show-options="<?php echo ($type['show_options']) ? 'yes' : 'no'; ?>" data-hideif="<?php echo implode (',', $type['hide_if']) ?>" <?php echo (in_array($m['type'],$type['hide_if'])) ? "style='display:none;'" : ""; ?>  >
                                             <?php echo $type['title'] ?>
                                         </option>
                                     <?php endforeach; ?>

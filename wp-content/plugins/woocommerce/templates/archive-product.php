@@ -46,6 +46,7 @@ do_action( 'woocommerce_before_main_content' );
 </header>
 <?php
 if ( woocommerce_product_loop() ) {
+	
 
 	/**
 	 * Hook: woocommerce_before_shop_loop.
@@ -66,7 +67,6 @@ if ( woocommerce_product_loop() ) {
 			 * Hook: woocommerce_shop_loop.
 			 */
 			do_action( 'woocommerce_shop_loop' );
-
 			wc_get_template_part( 'content', 'product' );
 		}
 	}

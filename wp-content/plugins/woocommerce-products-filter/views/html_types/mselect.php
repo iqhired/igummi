@@ -3,11 +3,17 @@
 global $WOOF;
 $collector = array();
 $_REQUEST['additional_taxes'] = $additional_taxes;
-$_REQUEST['hide_terms_count_txt'] = 0;
+$_REQUEST['hide_terms_count_txt'] = isset($this->settings['hide_terms_count_txt']) ? $this->settings['hide_terms_count_txt'] : 0;
 //***
-$_REQUEST['hide_terms_count_txt']=0;
+if(isset($_REQUEST['hide_terms_count_txt_short']) AND $_REQUEST['hide_terms_count_txt_short']!=-1){
+    if((int)$_REQUEST['hide_terms_count_txt_short']==1){
+        $_REQUEST['hide_terms_count_txt']=1;
+    }else{
+        $_REQUEST['hide_terms_count_txt']=0;
+    }
+}
 //***
-$woof_hide_dynamic_empty_pos = 0;
+$woof_hide_dynamic_empty_pos = get_option('woof_hide_dynamic_empty_pos');
 if (!function_exists('woof_draw_mselect_childs'))
 {
 
@@ -24,7 +30,7 @@ if (!function_exists('woof_draw_mselect_childs'))
 
         global $WOOF;
         $request = $WOOF->get_request_data();
-        $woof_hide_dynamic_empty_pos = 0;
+        $woof_hide_dynamic_empty_pos = get_option('woof_hide_dynamic_empty_pos');
 
         $current_request = array();
         if ($WOOF->is_isset_in_request_data($WOOF->check_slug($tax_slug)))

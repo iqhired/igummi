@@ -1,0 +1,16 @@
+2021-05-06T04:06:35+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\packages\woocommerce-blocks\src\StoreApi\Routes\Checkout.php on line 27
+
+2021-05-06T04:06:35+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\packages\woocommerce-blocks\src\StoreApi\Routes\CartRemoveItem.php on line 9
+
+2021-05-06T04:06:35+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\packages\woocommerce-blocks\src\StoreApi\Routes\CartUpdateItem.php on line 9
+
+2021-05-06T04:06:35+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\packages\woocommerce-blocks\src\StoreApi\Routes\RouteInterface.php on line 9
+
+2021-05-06T04:06:54+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\themes\astra\inc\compatibility\class-astra-site-origin.php on line 9
+
+2021-05-06T04:06:55+00:00 CRITICAL Out of memory (allocated 56623104) (tried to allocate 32768 bytes) in C:\xampp\htdocs\igummi\wp-content\themes\astra\inc\addons\transparent-header\classes\dynamic-css\dynamic.css.php on line 327
+
+2021-05-06T04:07:02+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\astra-addon\classes\builder\markup\class-astra-addon-builder-footer.php on line 9
+
+2021-05-06T04:08:36+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\includes\gateways\bacs\class-wc-gateway-bacs.php on line 8
+

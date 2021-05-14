@@ -21,8 +21,8 @@ if (!defined('ABSPATH'))
         add_filter('woof_extensions_type_index',array($this, 'add_type_index'));
     } 
     public function wp_footer(){
-         wp_enqueue_script( 'meta-select-js',  $this->get_meta_filter_link(). 'js/mselect.js', array('jquery'),WOOF_VERSION, true );
-         wp_enqueue_style( 'meta-select-css',  $this->get_meta_filter_link(). 'css/mselect.css',array(),WOOF_VERSION);
+         wp_enqueue_script( 'meta-mselect-js',  $this->get_meta_filter_link(). 'js/mselect.js', array('jquery'),WOOF_VERSION, true );
+         wp_enqueue_style( 'meta-mselect-css',  $this->get_meta_filter_link(). 'css/mselect.css',array(),WOOF_VERSION);
     }    
      
     public function get_meta_filter_path(){
@@ -52,7 +52,7 @@ if (!defined('ABSPATH'))
         $data['relation']=(isset($this->woof_settings[$this->meta_key]["search_logic"]))?$this->woof_settings[$this->meta_key]["search_logic"]:"OR";
         $data['meta_options']= (isset($this->type_options["options"]))?$this->type_options["options"]:"";
         $data['meta_settings']=(isset($this->woof_settings[$this->meta_key]))?$this->woof_settings[$this->meta_key]:"";
-        if($this->woof_settings[$this->meta_key]["show"]){
+        if(isset($this->woof_settings[$this->meta_key]["show"]) AND $this->woof_settings[$this->meta_key]["show"]){
             if(file_exists($this->get_meta_filter_override_path(). 'views' . DIRECTORY_SEPARATOR . 'woof.php')){
                 echo $this->render_html($this->get_meta_filter_override_path() . 'views' .DIRECTORY_SEPARATOR . 'woof.php', $data);
             }else{

@@ -32,9 +32,13 @@ $select_radio_check_height = (int) $this->settings['select_radio_check_height'][
             $args['woof_settings'] = get_option('woof_settings', array());
             $args['show_count'] = get_option('woof_show_count', 0);
             $args['show_count_dynamic'] = get_option('woof_show_count_dynamic', 0);
-            $args['hide_dynamic_empty_pos'] = 0;
+            $args['hide_dynamic_empty_pos'] = get_option('woof_hide_dynamic_empty_pos', 0);
 
-            echo $this->render_html(apply_filters('woof_html_types_view_radio', WOOF_PATH . 'views/html_types/radio.php'), $args);
+            if ($select_radio_check_type) {
+                echo $this->render_html(apply_filters('woof_html_types_view_checkbox', WOOF_PATH . 'views/html_types/checkbox.php'), $args);
+            } else {
+                echo $this->render_html(apply_filters('woof_html_types_view_radio', WOOF_PATH . 'views/html_types/radio.php'), $args);
+            }
             ?>            
         </div>
     </dd>

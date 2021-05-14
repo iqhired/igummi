@@ -23,6 +23,7 @@ woof_qs_cretor.generate = function () {
             },
             success: function (date) {
                 date = jQuery.parseJSON(date);
+                //console.log( date );
                 if (typeof date.total !== "undefined") {
 
                     if (woof_qs_cretor.qs_offset !== null) {

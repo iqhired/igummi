@@ -11,8 +11,8 @@ if (isset($WOOF->settings['by_onsales']) AND $WOOF->settings['by_onsales']['show
 	$_REQUEST['additional_taxes'] = $additional_taxes;
 	$show_count = get_option('woof_show_count', 0);
 	$show_count_dynamic = get_option('woof_show_count_dynamic', 0);
-	$hide_dynamic_empty_pos = 0;
-	$_REQUEST['hide_terms_count_txt'] = 0;
+	$hide_dynamic_empty_pos = get_option('woof_hide_dynamic_empty_pos', 0);
+	$_REQUEST['hide_terms_count_txt'] = isset($WOOF->settings['hide_terms_count_txt']) ? $WOOF->settings['hide_terms_count_txt'] : 0;
 	$count_string = "";
 	$count = 0;
 	$current_request = $WOOF->get_request_data();

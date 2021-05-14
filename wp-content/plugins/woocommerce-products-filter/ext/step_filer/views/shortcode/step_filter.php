@@ -12,7 +12,10 @@ if ($filter_type) {
 //global $WOOF;
 
 global $woof_link;
-$woof_reset_btn_txt = __('Reset', 'woocommerce-products-filter');
+$woof_reset_btn_txt = get_option('woof_reset_btn_txt', '');
+if (empty($woof_reset_btn_txt)) {
+    $woof_reset_btn_txt = __('Reset', 'woocommerce-products-filter');
+}
 $woof_reset_btn_txt = WOOF_HELPER::wpml_translate(null, $woof_reset_btn_txt);
 ?>
 

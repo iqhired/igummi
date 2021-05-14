@@ -62,7 +62,7 @@ if (!defined('ABSPATH'))
         $data['search_value']=(isset($this->woof_settings[$this->meta_key]['search_value']))?$this->woof_settings[$this->meta_key]['search_value']:"";       
         $data['type']=(isset($this->woof_settings['meta_filter'][$this->meta_key]['type']))?$this->woof_settings['meta_filter'][$this->meta_key]['type']:'numeric';
       
-        if($this->woof_settings[$this->meta_key]["show"]){
+        if(isset($this->woof_settings[$this->meta_key]["show"]) AND $this->woof_settings[$this->meta_key]["show"]){
             
             if(file_exists($this->get_meta_filter_override_path(). 'views' . DIRECTORY_SEPARATOR . 'woof.php')){
                 echo $this->render_html($this->get_meta_filter_override_path() . 'views' .DIRECTORY_SEPARATOR . 'woof.php', $data);

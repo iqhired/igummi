@@ -28,6 +28,7 @@ if ( ( empty( $template_post_id ) || ! in_array( $template_post_id, $template_da
 }
 
 if ( ! empty( $template_post_id ) ) {
+	
 	echo SiteOrigin_Panels_Renderer::single()->render( $template_post_id );
 }
 

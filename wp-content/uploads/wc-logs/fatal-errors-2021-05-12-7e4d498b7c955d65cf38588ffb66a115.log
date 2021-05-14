@@ -1,0 +1,28 @@
+2021-05-12T04:55:45+00:00 CRITICAL Uncaught Error: Call to a member function get_attributes() on null in C:\xampp\htdocs\igummi\wp-content\plugins\astra-addon\addons\advanced-hooks\classes\class-astra-ext-advanced-hooks-markup.php:240
+Stack trace:
+#0 C:\xampp\htdocs\igummi\wp-includes\class-wp-hook.php(292): Astra_Ext_Advanced_Hooks_Markup->advanced_hook_content_markup('[contact-form-7...')
+#1 C:\xampp\htdocs\igummi\wp-includes\plugin.php(212): WP_Hook->apply_filters('[contact-form-7...', Array)
+#2 C:\xampp\htdocs\igummi\wp-includes\post-template.php(253): apply_filters('the_content', '[contact-form-7...')
+#3 C:\xampp\htdocs\igummi\wp-content\themes\astra\template-parts\content-page.php(54): the_content()
+#4 C:\xampp\htdocs\igummi\wp-includes\template.php(732): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\igummi\wp-includes\template.php(676): load_template('C:\\xampp\\htdocs...', false, Array)
+#6 C:\xampp\htdocs\igummi\wp-includes\general-template.php(204): locate_template(Array, true, false, Array)
+#7 C:\xampp\htdocs\igummi\wp-content\t in C:\xampp\htdocs\igummi\wp-content\plugins\astra-addon\addons\advanced-hooks\classes\class-astra-ext-advanced-hooks-markup.php on line 240
+
+2021-05-12T05:02:01+00:00 CRITICAL Uncaught Error: Call to a member function get_attributes() on null in C:\xampp\htdocs\igummi\wp-content\plugins\astra-addon\addons\advanced-hooks\classes\class-astra-ext-advanced-hooks-markup.php:240
+Stack trace:
+#0 C:\xampp\htdocs\igummi\wp-includes\class-wp-hook.php(292): Astra_Ext_Advanced_Hooks_Markup->advanced_hook_content_markup('[contact-form-7...')
+#1 C:\xampp\htdocs\igummi\wp-includes\plugin.php(212): WP_Hook->apply_filters('[contact-form-7...', Array)
+#2 C:\xampp\htdocs\igummi\wp-includes\post-template.php(253): apply_filters('the_content', '[contact-form-7...')
+#3 C:\xampp\htdocs\igummi\wp-content\themes\astra\template-parts\content-page.php(54): the_content()
+#4 C:\xampp\htdocs\igummi\wp-includes\template.php(732): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\igummi\wp-includes\template.php(676): load_template('C:\\xampp\\htdocs...', false, Array)
+#6 C:\xampp\htdocs\igummi\wp-includes\general-template.php(204): locate_template(Array, true, false, Array)
+#7 C:\xampp\htdocs\igummi\wp-content\t in C:\xampp\htdocs\igummi\wp-content\plugins\astra-addon\addons\advanced-hooks\classes\class-astra-ext-advanced-hooks-markup.php on line 240
+
+2021-05-12T10:28:43+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-includes\wp-db.php on line 2056
+
+2021-05-12T22:19:20+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\themes\astra\inc\compatibility\class-astra-divi-builder.php on line 9
+
+2021-05-12T23:33:56+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\sg-cachepress\core\Supercacher\Supercacher.php on line 240
+

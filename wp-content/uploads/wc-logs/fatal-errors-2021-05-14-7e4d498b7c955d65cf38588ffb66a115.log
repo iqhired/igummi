@@ -1,0 +1,75 @@
+2021-05-14T02:29:53+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 18
+
+2021-05-14T02:39:02+00:00 CRITICAL syntax error, unexpected end of file in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 594
+
+2021-05-14T02:39:05+00:00 CRITICAL syntax error, unexpected end of file in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 594
+
+2021-05-14T02:46:09+00:00 CRITICAL Cannot redeclare fetch_data() (previously declared in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php:471) in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 468
+
+2021-05-14T02:47:22+00:00 CRITICAL Uncaught Error: Call to undefined function fetch_data() in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php:549
+Stack trace:
+#0 C:\xampp\htdocs\igummi\wp-includes\class-wp-hook.php(294): mp_sync_on_product_update(588)
+#1 C:\xampp\htdocs\igummi\wp-includes\class-wp-hook.php(316): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\igummi\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\includes\data-stores\class-wc-product-data-store-cpt.php(275): do_action('woocommerce_upd...', 588, Object(WC_Product_Simple))
+#4 C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\includes\class-wc-data-store.php(179): WC_Product_Data_Store_CPT->update(Object(WC_Product_Simple))
+#5 C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\includes\abstracts\abstract-wc-product.php(1378): WC_Data_Store->update(Object(WC_Product_Simple))
+#6 C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\includes\admin\meta-boxes\class-wc-meta-box-product-data.php( in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 549
+
+2021-05-14T02:53:27+00:00 CRITICAL Cannot redeclare fetch_data1() (previously declared in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php:341) in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 338
+
+2021-05-14T02:55:10+00:00 CRITICAL Cannot redeclare fetch_data1() (previously declared in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php:341) in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 338
+
+2021-05-14T03:02:52+00:00 CRITICAL Cannot redeclare fetch_data1() (previously declared in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php:341) in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 338
+
+2021-05-14T03:03:39+00:00 CRITICAL Cannot redeclare fetch_data1() (previously declared in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php:341) in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 338
+
+2021-05-14T03:05:45+00:00 CRITICAL Cannot redeclare fetch_data1() (previously declared in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php:341) in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 338
+
+2021-05-14T03:06:30+00:00 CRITICAL Cannot redeclare get_pro_data() (previously declared in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php:341) in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 338
+
+2021-05-14T03:07:44+00:00 CRITICAL Cannot redeclare get_pro_data() (previously declared in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php:341) in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 338
+
+2021-05-14T03:08:40+00:00 CRITICAL Cannot redeclare get_pro_data() (previously declared in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php:341) in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 338
+
+2021-05-14T03:09:15+00:00 CRITICAL syntax error, unexpected '}', expecting end of file in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 437
+
+2021-05-14T03:09:30+00:00 CRITICAL syntax error, unexpected '}', expecting end of file in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 437
+
+2021-05-14T03:13:05+00:00 CRITICAL Cannot redeclare get_pro_data() (previously declared in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php:329) in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 328
+
+2021-05-14T04:44:32+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-includes\wp-db.php on line 2056
+
+2021-05-14T05:02:27+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\wpforms-lite\includes\fields\class-select.php on line 8
+
+2021-05-14T05:02:36+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-admin\includes\media.php on line 16
+
+2021-05-14T05:03:23+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\alter\includes\alter.class.php on line 275
+
+2021-05-14T05:03:23+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\includes\rest-api\Controllers\Version3\class-wc-rest-customers-controller.php on line 19
+
+2021-05-14T05:03:24+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\includes\rest-api\Controllers\Version3\class-wc-rest-payment-gateways-controller.php on line 19
+
+2021-05-14T05:04:32+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-includes\blocks.php on line 199
+
+php on line 9
+
+2021-05-14T05:04:45+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-includes\wp-db.php on line 2056
+
+2021-05-14T05:06:26+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\templates\archive-product.php on line 20
+
+2021-05-14T06:31:33+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\packages\woocommerce-blocks\src\Registry\SharedType.php on line 9
+
+2021-05-14T06:33:01+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\includes\rest-api\Server.php on line 10
+
+2021-05-14T06:40:17+00:00 CRITICAL Uncaught Error: Call to a member function get_name() on null in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php:409
+Stack trace:
+#0 C:\xampp\htdocs\igummi\wp-includes\class-wp-hook.php(294): mp_sync_on_product_update(605)
+#1 C:\xampp\htdocs\igummi\wp-includes\class-wp-hook.php(316): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\igummi\wp-includes\plugin.php(484): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\includes\data-stores\class-wc-product-data-store-cpt.php(275): do_action('woocommerce_upd...', 605, Object(WC_Product_Simple))
+#4 C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\includes\class-wc-data-store.php(179): WC_Product_Data_Store_CPT->update(Object(WC_Product_Simple))
+#5 C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\includes\abstracts\abstract-wc-product.php(1378): WC_Data_Store->update(Object(WC_Product_Simple))
+#6 C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(666): WC_Product->save()
+#7 C in C:\xampp\htdocs\igummi\wp-content\themes\astra\functions.php on line 409
+

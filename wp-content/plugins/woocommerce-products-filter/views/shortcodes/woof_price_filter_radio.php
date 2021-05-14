@@ -7,10 +7,16 @@ $price2_filter_data = WOOF_HELPER::get_price2_filter_data($additional_taxes);
 
 $show_count = get_option('woof_show_count', 0);
 $show_count_dynamic = get_option('woof_show_count_dynamic', 0);
-$hide_dynamic_empty_pos = 0;
-$hide_count_text = 0;
+$hide_dynamic_empty_pos = get_option('woof_hide_dynamic_empty_pos', 0);
+$hide_count_text = isset($this->settings['hide_terms_count_txt']) ? $this->settings['hide_terms_count_txt'] : 0;
 //***
-$hide_count_text = 0;
+if (isset($_REQUEST['hide_terms_count_txt_short']) AND $_REQUEST['hide_terms_count_txt_short'] != -1) {
+    if ((int) $_REQUEST['hide_terms_count_txt_short'] == 1) {
+        $hide_count_text = 1;
+    } else {
+        $hide_count_text = 0;
+    }
+}
 //***
 ?>
 
@@ -47,7 +53,7 @@ $hide_count_text = 0;
                     ?>
                     <li class="woof_list">
                         <input type="radio" <?php if ($c == 0 AND $show_count): ?>disabled=""<?php endif; ?> class="woof_price_filter_radio"  <?php echo checked($price2_filter_data['selected'], $k); ?>  name="woof_price_radio" id="woof_price_radio_<?php echo $unique_id ?>" value="<?php echo $k ?>"  />
-                        &nbsp;&nbsp;<label for="woof_price_radio_<?php echo $unique_id ?>"><?php echo($value) ?> <?php echo $cs ?>  </label>
+                        <span>&nbsp;&nbsp;</span><label for="woof_price_radio_<?php echo $unique_id ?>"><?php echo($value) ?> <?php echo $cs ?>  </label>
                         <a href="" data-tax="price" style="display: none;" class="woof_radio_price_reset <?php if ($price2_filter_data['selected'] == $k): ?> woof_radio_term_reset_visible <?php endif; ?> woof_radio_term_reset_<?php echo $k ?>"><img src="<?php echo WOOF_LINK ?>img/delete.png" height="12" width="12" alt="<?php _e("Delete", 'woocommerce-products-filter') ?>" /></a>
                     </li>
                 <?php

@@ -71,8 +71,8 @@ final class WOOF_CONDITIONALS extends WOOF_EXT {
 
             $attrs['shortcode_atts']['conditionals'] = $WOOF->settings['woof_conditionals'];
         }
-        
         if (isset($attrs['shortcode_atts']['conditionals'])) {
+
             ///'tax_exclude'
             $terms = $this->generate_conditional_attr(preg_replace('/&(amp;)?#\d+;/', '', $attrs['shortcode_atts']['conditionals']));
 
@@ -129,8 +129,6 @@ final class WOOF_CONDITIONALS extends WOOF_EXT {
                 array_map('trim', $conditionals[$key][$s_key]);
             }
         }
-
-        $conditionals= array_slice($conditionals, 0, 1);
 
         return $conditionals;
     }

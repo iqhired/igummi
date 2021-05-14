@@ -60,7 +60,7 @@ final class WOOF_SLIDEOUT extends WOOF_EXT {
         wp_enqueue_style('woof-slideout-css', $this->get_ext_link() . 'css/slideout.css');
         wp_enqueue_script('woof-slideout-init', $this->get_ext_link() . 'js/slideout.js', array('jquery'));
 
-        if (isset($this->woof_settings['woof_slideout_show']) AND $this->woof_settings['woof_slideout_show']) {
+        if (isset($this->woof_settings['woof_slideout_show']) AND $this->woof_settings['woof_slideout_show'] AND is_woocommerce()) {
             $this->woof_settings['woof_slideout_class'] = 'woof_slideout_default';
             if (!isset($this->woof_settings['woof_slideout_width']) OR ! $this->woof_settings['woof_slideout_width']) {
                 $this->woof_settings['woof_slideout_width'] = "350";
@@ -95,6 +95,9 @@ final class WOOF_SLIDEOUT extends WOOF_EXT {
 
     public function woof_slideout($atts, $content) {
         $image = $this->get_ext_link() . 'img' . DIRECTORY_SEPARATOR . 'filter.png';
+        if (isset($this->woof_settings['woof_slideout_img']) AND $this->woof_settings['woof_slideout_img']) {
+            $image = $this->woof_settings['woof_slideout_img'];
+        }
 
         $atts = shortcode_atts(array(
             'image' => $image,

@@ -9,7 +9,7 @@ if ($dynamic_recount == -1) {
 } else {
     $args['show_count_dynamic'] = $dynamic_recount;
 }
-$args['hide_dynamic_empty_pos'] = 0;
+$args['hide_dynamic_empty_pos'] = get_option('woof_hide_dynamic_empty_pos', 0);
 $args['woof_autosubmit'] = $autosubmit;
 //***
 
@@ -29,8 +29,10 @@ if (!function_exists('woof_show_btn')) {
                 ?>
 
                 <?php
-           
-                $woof_reset_btn_txt =  __('Reset', 'woocommerce-products-filter');
+                $woof_reset_btn_txt = get_option('woof_reset_btn_txt', '');
+                if (empty($woof_reset_btn_txt)) {
+                    $woof_reset_btn_txt = __('Reset', 'woocommerce-products-filter');
+                }
                 $woof_reset_btn_txt = WOOF_HELPER::wpml_translate(null, $woof_reset_btn_txt);
                 ?>
 
@@ -41,7 +43,10 @@ if (!function_exists('woof_show_btn')) {
 
             <?php if (!$autosubmit OR $ajax_redraw): ?>
                 <?php
-                $woof_filter_btn_txt = __('Filter', 'woocommerce-products-filter');
+                $woof_filter_btn_txt = get_option('woof_filter_btn_txt', '');
+                if (empty($woof_filter_btn_txt)) {
+                    $woof_filter_btn_txt = __('Filter', 'woocommerce-products-filter');
+                }
 
                 $woof_filter_btn_txt = WOOF_HELPER::wpml_translate(null, $woof_filter_btn_txt);
                 ?>

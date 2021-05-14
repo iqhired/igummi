@@ -113,7 +113,7 @@ if(notice_wraper.length){
     
     jQuery.post(woof_ajaxurl, data, function (content) {
         var result = jQuery.parseJSON(content);
-        console.log(result); 
+        //console.log(result); 
         jQuery.each(result,function(i,item){
             jQuery.each(item,function(key,res){
                 jQuery(".woof_query_save_notice_"+key).html(res);

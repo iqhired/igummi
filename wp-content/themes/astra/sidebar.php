@@ -30,8 +30,11 @@ echo '<div ';
 		<?php astra_sidebars_before(); ?>
 		<?php 
 		if ( is_active_sidebar( $sidebar ) ) :
-				dynamic_sidebar( $sidebar );
+			//	dynamic_sidebar( $sidebar );
 			endif;
+			echo '<div class="row"><center><h2><b>iGummi Seal Selector</b></h2></center></div>';
+			echo do_shortcode( '[woof]' );
+		
 		astra_sidebars_after(); 
 		?>
 

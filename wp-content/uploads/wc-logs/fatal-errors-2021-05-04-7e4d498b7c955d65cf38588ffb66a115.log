@@ -1,0 +1,10 @@
+2021-05-04T10:43:11+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\astra-addon\classes\builder\type\base\configurations\class-astra-addon-base-configs.php on line 9
+
+2021-05-04T10:43:25+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\Features\ShippingLabelBanner.php on line 15
+
+2021-05-04T11:06:48+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\packages\woocommerce-admin\src\Features\Homescreen.php on line 14
+
+2021-05-04T11:07:17+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\plugins\woocommerce\packages\woocommerce-blocks\src\Assets\Api.php on line 81
+
+2021-05-04T11:08:41+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\igummi\wp-content\themes\astra\inc\builder\type\header\mobile-menu\class-astra-mobile-menu-component-loader.php on line 12
+

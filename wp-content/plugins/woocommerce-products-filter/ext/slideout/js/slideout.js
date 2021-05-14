@@ -17,8 +17,8 @@ jQuery(document).ready(function() {
                // fixedPosition: true, //options: true makes it stick(fixed position) on scroll
                 onLoadSlideOut: jQuery(item).data('onloadslideout')
             });
-            
-            if(woof_slideout_screenHeight()<jQuery(item).height()){
+
+            if(woof_slideout_screenHeight()-jQuery(item).position().top<jQuery(item).height()){
                 var height=0;
                 if(jQuery(item).data('location')=="top"|| jQuery(item).data('location')=="bottom"){
                     height=woof_slideout_screenHeight()- jQuery('.woof-handle.'+key).height() -10;
@@ -45,8 +45,8 @@ jQuery(document).ready(function() {
     });
 });    
 function woof_slideout_screenHeight(){
-    return jQuery.browser.opera? window.innerHeight : jQuery(window).height();
+    return  jQuery(window).height();
 }
 function woof_slideout_screenWidth(){
-    return jQuery.browser.opera? window.innerWidth : jQuery(window).width();
+    return jQuery(window).width();
 }

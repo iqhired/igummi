@@ -74,6 +74,9 @@ final class WOOF_EXT_BY_ONSALES extends WOOF_EXT {
     public function dynamic_recount($args, $type) {
 		if( 'onsale' == $type){
 			$all_ids = wc_get_product_ids_on_sale() ;
+			if(!count($all_ids)){
+				$all_ids = array(0);
+			}
 			if(!isset($args['post__in'])){
 				$args['post__in'] = $all_ids ;
 			}else{

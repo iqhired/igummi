@@ -160,7 +160,7 @@ final class WOOF_EXT_TURBO_MODE extends WOOF_EXT {
             'current_tax' => $curr_tax,
 			'additional_tax'=>$this->attr_taxonomies,
             'show_count' => get_option('woof_show_count_turbo_mode', 0),
-            'hide_count' => 0,
+            'hide_count' => isset($this->woof_settings['hide_terms_count_txt']) ? $this->woof_settings['hide_terms_count_txt'] : 0,
             'hide_empty_term' => get_option('woof_hide_dynamic_empty_pos_turbo_mode', 0),
             'dynamic_recount' => $dynamic_recount,
         );

@@ -88,15 +88,17 @@ global $WOOF;
                     </div>
                 </div><!--/ .woof-control-section-->                     
                 <?php
-                $woof_settings['woof_slideout_img'] = '';
+                if (!isset($woof_settings['woof_slideout_img'])) {
+                    $woof_settings['woof_slideout_img'] = '';
+                }
                 ?>
                 <div class="woof-control-section" <?php echo ($woof_settings['woof_slideout_type_btn'] == 1) ? "style='display:none'" : "" ?> >
-                    <h4 style="color: red;"><?php _e('Slideout image', 'woocommerce-products-filter') ?></h4>
+                    <h4><?php _e('Slideout image', 'woocommerce-products-filter') ?></h4>
 
                     <div class="woof-control-container">
                         <div class="woof-control woof-upload-style-wrap">
-                            <input type="text" name="woof_settings[woof_slideout_img]" class="slideout_value" data-name="woof_slideout_img" value="" disabled="" />
-                            <a href="javascript: alert('In the premium version');void(0);" style="margin: 0;" class="woof-button"><?php _e('Select Image', 'woocommerce-products-filter') ?></a>
+                            <input type="text" name="woof_settings[woof_slideout_img]" class="slideout_value" data-name="woof_slideout_img" value="<?php echo $woof_settings['woof_slideout_img'] ?>" />
+                            <a href="#" class="woof-button woof_select_image"><?php _e('Select Image', 'woocommerce-products-filter') ?></a>
                         </div>
                         <div class="woof-description">
                             <p class="description"><?php _e('Url of the custom image for the button', 'woocommerce-products-filter') ?></p>
@@ -104,14 +106,16 @@ global $WOOF;
                     </div>
                 </div><!--/ .woof-control-section-->
                 <?php
-                $woof_settings['woof_slideout_txt'] = __('Filter', 'woocommerce-products-filter');
+                if (!isset($woof_settings['woof_slideout_txt'])) {
+                    $woof_settings['woof_slideout_txt'] = __('Filter', 'woocommerce-products-filter');
+                }
                 ?>
                 <div class="woof-control-section" <?php echo ($woof_settings['woof_slideout_type_btn'] == 0) ? "style='display:none'" : "" ?>  >
-                    <h4 style="color: red;"><?php _e('Slideout text', 'woocommerce-products-filter') ?></h4>
+                    <h4><?php _e('Slideout text', 'woocommerce-products-filter') ?></h4>
 
                     <div class="woof-control-container">
                         <div class="woof-control">
-                            <input type="text" name="woof_settings[woof_slideout_txt]" disabled="" class="slideout_value" data-name="woof_slideout_txt" value="<?php echo $woof_settings['woof_slideout_txt'] ?>" />
+                            <input type="text" name="woof_settings[woof_slideout_txt]" class="slideout_value" data-name="woof_slideout_txt" value="<?php echo $woof_settings['woof_slideout_txt'] ?>" />
 
                         </div>
                         <div class="woof-description">

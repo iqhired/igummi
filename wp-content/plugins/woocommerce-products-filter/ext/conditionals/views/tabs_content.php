@@ -25,7 +25,7 @@ global $WOOF;
 
                         <div class="woof-control-container">
                             <div class="woof-control">
-                                
+
                                 <?php if ($WOOF->is_free_ver): ?>
                                     <p style="color: red;"><?php _e('In FREE version it is possible to operate with 1 condition (first) only!', 'woocommerce-products-filter') ?></p>
                                 <?php endif; ?>
