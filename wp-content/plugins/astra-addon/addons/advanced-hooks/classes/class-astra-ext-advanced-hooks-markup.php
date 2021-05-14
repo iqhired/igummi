@@ -247,10 +247,11 @@ if (!class_exists('Astra_Ext_Advanced_Hooks_Markup')) {
         }
         
         if (!empty($formatted_attributes)) {
-
+$value = get_field( "product_number" );
+}
             $content = '';
             $content .= '<div class="field field--name-sku field--type-string field--label-inline">
-<div class="field__item"><strong>' . $product->get_sku() . '</strong></div>
+<div class="field__item"><strong>' . $value . '</strong></div>
 </div>';
             $count == 0;
             if (!is_single()) {
